@@ -5,7 +5,6 @@ Dans ce projet nous allons apprendre les bases de la poo ( programmation oriente
 * *un objet:* c'est l'instance d'une classe.
 exemple:  creer la classe personne avec les proprietés suivantes: le nom et l'age.
 et ensuite dans la méthode main creer un objet personne et afficher les propriétés en console.
-
 ## encapsulation 
 ## heritage
 ## polymorphisme
