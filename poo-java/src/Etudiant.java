@@ -35,13 +35,19 @@ public class Etudiant extends Personne {
 		this.niveau = niveau;
 	}
 	
-    @Override
+	@Override
 	public String toString() {
 		return "Etudiant [matricule = " + matricule + ", filiere =" + filiere + ", niveau =" + niveau + ", nom ="
 				+ getName() + ", Age =" + getAge() + "]";
 	}
+	// redéfinition de la methode affiche
+	public String affiche() {
+		return "Etudiant [matricule = " + matricule + ", filiere =" + filiere + ", niveau =" + niveau + ", nom ="
+				+ getName() + ", Age =" + getAge() + "]";
+	}
 	
-
-	
+	public String afficheMonNom () {
+		return "je suis la classe etudiant";
+	}
 
 }

@@ -2,6 +2,9 @@
 public class Enseignant extends Personne{
 	private String grade;
 	private String diplome;
+	
+
+	
 	public Enseignant(String name, int age, String grade, String diplome) {
 		super(name,age);
 		this.grade = grade;

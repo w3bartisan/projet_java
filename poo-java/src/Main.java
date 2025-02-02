@@ -8,19 +8,17 @@ public class Main {
 		
 		
 		//Creation d'un objet personne
-		Personne p = new Personne("AURIOL", 25);
+		//Personne p = new Personne("AURIOL", 25);
 		//afficher les propriétés
-		System.out.println("le nom est: "+ p.getName() + "  l'age est:" + p.getAge());
+		//System.out.println("le nom est: "+ p.getName() + "  l'age est:" + p.getAge());
 		//System.out.println("l'age est: "+ p.getAge());
-		///
-		///
 		 
 		//creation d'un enseignant
 		
-		Enseignant e = new Enseignant("AURIOL", 25, "DOCTEUR", "Master");
+		//Enseignant e = new Enseignant("AURIOL", 25, "DOCTEUR", "Master");
 		
 		//affichage 
-		//System.out.println(e.toString());
+		/*System.out.println(e.toString());
 		System.out.println("le grade est:"+ e.getGrade());
 		System.out.println("le diplome est:"+ e.getDiplome());
 		System.out.println("le nom est:"+ e.getName());
@@ -31,10 +29,13 @@ public class Main {
 		// Creation d'un etudiant
 		
 		Etudiant et = new Etudiant ("AURIOL", 25,"CMUDS-25SCI2000","INFORMATIQUE",4);
-	System.out.println(et.toString());
+		System.out.println(et.afficheMonNom());
 		
+		Personne p1 = new Personne("PRO", 30);
 		
-		// liste d'etudiants en java
+		System.out.println(p1.afficheMonNom());
+		*/
+		/* liste d'etudiants en java
 	 
 		List<Etudiant> listEtud = new ArrayList<>();
 		
@@ -66,9 +67,65 @@ public class Main {
 		listEtud.remove(1);
 		System.out.println(listEtud);
 		
+		*/
+		/* Polymorphisme
+		
+		Personne per = new Etudiant ("AURIOL", 25,"CMUDS-25SCI2000","INFORMATIQUE",4);
+		Personne per2 = new Enseignant("AURIOL", 25, "DOCTEUR", "Master");
+		*/
+		
+		EtudiantService service = new EtudiantService();
+		try {
+			System.out.println(service.listesEtudiants());
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		Etudiant p = new Etudiant ("AURIOL", 25,"CMUDS-25SCI2000","INFORMATIQUE",4);
+		service.createEtudiant(p);
+		try {
+			System.out.println(service.listesEtudiants());
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		Etudiant p2 = new Etudiant ("PRO", 25,"CMUDS-25SCI2000","INFORMATIQUE",4);
+		service.updateEtudiant(p2, 0);
+		try {
+			System.out.println(service.listesEtudiants());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.getMessage();
+		}
+		
+		// Personne p3 = new Personne("paul"); impossible car Personne est une classe abstraite  
+		
+		ServiceEnseigant servv = new ServiceEnseigant();
+		
+		try {
+			System.out.println(servv.listEns());
+		} catch (Exception es) {
+			es.getMessage(); }
+		
+		Enseignant ess = new Enseignant("PRO",50,"DOCTEUR","Master");
+		
+		// creation d'un enseignant la methode create
+		
+		servv.createEnseignant(ess);
+		System.out.println(servv.listEns);
+		
+		// modification d'un enseignant
+		
+		Enseignant esss = new Enseignant("Brad", 35, "Professeur", "Doctorat");
+		
+		servv.updateEnseigant(0, esss);
+		System.out.println(servv.listEns);
+		
+		//lister un enseignant 
 		
 		
+		
+		
+	} 
+	
 	}
-}
 
 

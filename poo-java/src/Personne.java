@@ -1,5 +1,5 @@
 
-public class Personne {
+public abstract class Personne {
 	private String name;
 	private int age;
 	
@@ -29,5 +29,12 @@ public class Personne {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	public String affiche() {
+		return "Personne [name=" + name + ", age=" + age + "]";
+	}
 	
+	public String afficheMonNom() {
+		return " je suis la classe Personne";
+	}
 }
